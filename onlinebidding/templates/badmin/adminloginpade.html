@@ -1,0 +1,53 @@
+{% load static %}
+<html>
+
+<body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<table align="center" border="0">
+    <tr><th>{% include 'head.html' %}</th></tr>
+    <tr><th>{% include 'menubar.html' %}</th></tr>
+</table>
+    <br>
+    <form action="{% url 'adminlogin' %}" method="post">
+        {% csrf_token %}
+    <table align="center" border="0" width="500" height="200">
+        <tr style="height: 20px;">
+            <th><img src="{% static 'images/admin_4.png' %}" width="200"></th>
+            <th  width="300" colspan="3" style="height: 80px;;font-family: Arial"><h1 style="font-size: 35px;color: dodgerblue;font-weight: bolder;text-align: left">Admin Login</h1></th>
+        </tr><br>
+        <tr style="height: 20px">
+            <th style="height: 70px;font-size: 20px">Username</th>
+            <th><input type="text" name="uname" required placeholder="Enter UserName" autofocus autocomplete="on"></th>
+        </tr>
+        <tr style="height: 20px">
+            <th style="height: 70px;font-size: 20px">Password</th>
+            <th><input type="password" name="upass" required placeholder="Enter password" autocomplete="on"></th>
+        </tr>
+        <tr style="height: 20px">
+            <th colspan="2"><center><button type="submit" class="btn btn-primary">Login</button></center></th>
+        </tr>
+    </table>
+    </form>
+    <table align="center" border="0" width="1000">
+         <tr>
+            <th>
+                 {% for foo in messages %}
+
+                     <h2 style="text-align: center;color: red;font-size: 25px;font-weight: bolder;text-transform: uppercase">
+                         {{ foo }}</h2>
+
+   {% endfor %}
+            </th>
+        </tr>
+
+
+    </table>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

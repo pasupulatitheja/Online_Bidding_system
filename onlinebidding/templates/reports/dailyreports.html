@@ -1,0 +1,20 @@
+{% for x in mess %}
+{{ x.bid_ammount }}
+    {{ x.productid.status }}
+    <br>
+    {{ x.productid.bid_price }}
+    <br>
+    {{ x.date_of_join }}
+    <br>
+    {{ x.date_of_join.max }}
+    <br>
+
+    {{ x.date_of_join.min }}
+    <br>
+    {{ x.date_of_join.month }}
+    <br>
+    {{ x.userid.id }}
+        <br>
+    {{ x.userid.doj }}
+
+{% endfor %}
